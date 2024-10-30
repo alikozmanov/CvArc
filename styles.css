@@ -45,9 +45,9 @@ body {
     border-radius: 10px;
     border: 2px solid #37474f;
 }
-/* Effet de hover sur l'image */
+/* Hover sur l'image */
 .image-container img:hover {
-    transform: scale(1.1); /* Agrandit l'image légèrement */
+    transform: scale(1.3); /* Agrandit l'image */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
     border-color: #1e88e5; 
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
