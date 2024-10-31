@@ -1,23 +1,19 @@
+/* Arrière-plan du corps avec effet arc-en-ciel synchronisé */
 body {
     font-family: Arial, sans-serif;
     color: #263238;
     padding: 20px;
     margin: 0;
-    background-color: #2D348D;
-    animation: rainbow 15s infinite;
+    background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #00FF7F, #00FFFF, #007FFF, #0000FF, #8B00FF, #FF00FF);
+    background-size: 300%;
+    animation: rainbowBackgroundSync 15s infinite linear;
 }
 
-@keyframes rainbow {
-    0%    {background-color: #FF0000;} 
-    10%   {background-color: #FF7F00;}  
-    20%   {background-color: #FFFF00;}  
-    40%   {background-color: #00FF00;}  
-    50%   {background-color: #00FF7F;}  
-    60%   {background-color: #00FFFF;}  
-    70%   {background-color: #007FFF;}
-    80%   {background-color: #0000FF;} 
-    90%   {background-color: #8B00FF;}  
-    100%  {background-color: #FF00FF;}  
+/* Animation de l'arrière-plan arc-en-ciel, synchronisée avec les boutons */
+@keyframes rainbowBackgroundSync {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Container principal */
@@ -72,7 +68,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.infotexte {
+.info-texte {
     color: #1e88e5;
     font-weight: bold;
 }
@@ -105,6 +101,35 @@ ul li::before {
     font-size: 1.5em;
     color: #1e88e5;
 }
+
+/* Styles des boutons de musique */
+button {
+    background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #00FF7F, #00FFFF, #007FFF, #0000FF, #8B00FF, #FF00FF);
+    background-size: 300%;
+    font-size: 1.2em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    animation: rainbowButton 15s infinite linear;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation d'arc-en-ciel pour les boutons */
+@keyframes rainbowButton {
+    0%    { background-position: 0% 50%; }
+    50%   { background-position: 100% 50%; }
+    100%  { background-position: 0% 50%; }
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
